@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doors project</title>
+    <style>
+        a {
+  display: none;
+}
+img#web {
+  position: absolute;
+  left: 45%; 
+}
+img#left-door {
+  position: absolute;
+  left: 40%;
+  top: 330px;
+  display: none;
+}
+img#blue-candy {
+  position: relative;
+  left: 39%;
+  top: 333px;
+  display: none;
+}
+img#heisenberg {
+  position: relative;
+  left: 54%;
+  top: 110px;
+  display: none;
+}
+img#right-door {
+  position: absolute;
+  left: 55%;
+  top: 330px;
+  display: none;
+}
+input#user-name {
+  position: absolute;
+  left: 44%;
+  top: 200px;
+}
+button#button {
+  position: absolute;
+  left: 56%;
+  top: 200px;
+}
+button#button2 {
+  position: absolute;
+  left: 41%;
+  top: 310px;
+  display: none;
+}
+button#button3 {
+  position: absolute;
+  left: 57%;
+  top: 310px;
+  display: none;
+}
+button#button4 {
+  position: absolute;
+  left: 50%;
+  top: 310px;
+  display: none;
+}
+h1#hello-message {
+  position: absolute;
+  left: 46%;
+  top: 180px;
+  color: orange;
+  font-family: 'Russo One', sans-serif;
+}
+h1#text-placeholder {
+  position: absolute;
+  left: 38%;
+  top: 215px;
+  color: orange;
+  font-family: 'Russo One', sans-serif;
+}
+h1#text-placeholder2 {
+  position: absolute;
+  left: 32%;
+  top: 245px;
+  color: orange;
+  font-family: 'Russo One', sans-serif;
+}
+img#waltuh {
+  position: absolute;
+  left: 37%;
+  top: 61%;
+  display: none;
+}
+img#walt {
+  position: absolute;
+  top: -7%;
+  left: -100px;
+}
+img#gus {
+  position: absolute;
+  left: 40%;
+  top: 55%;
+  display: none;
+}
+img#saul {
+  position: absolute;
+  left: 65%;
+  top: 10%;
+}
+img#spider {
+  position: absolute;
+  left: 49%;
+  top: 105px;
+  animation: spiderMove 5s ease-in-out infinite;
+}
+div.container {
+  background-image: url(https://i.pinimg.com/originals/aa/bf/fb/aabffbe251df89bfa1b3d4a03c71008b.jpg);
+  background-repeat: no-repeat;
+  background-width: 100vw;
+  background-size: contain;
+  width: 100vw;
+  height: 100vh;
+}
+@keyframes spiderMove {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+    </style>
+</head>
+
+<body>
+    <a href="https://westmeccoding.github.io/spider-animation/" target="_blank"> click this link to see the spider animation</a>
+<div class="container">
+<img id="web" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Breaking_Bad_logo.svg/2560px-Breaking_Bad_logo.svg.png" width=200 />
+  <input id="user-name" type="text" placeholder="type your name"/>
+<button id="button" type="button" onclick="displayMessage()">Submit</button>
+  <button id="button2" type="button" onclick="doorRandom('left')">Choose!</button>
+  <button id="button3" type="button" onclick="doorRandom('right')">Choose!</button>
+  <button id="button4" type="button" onclick="reset()">Reset</button>
+  <h1 id="hello-message"></h1>
+  <h1 id="text-placeholder"></h1>
+  <h1 id="text-placeholder2"></h1>
+  <img id="blue-candy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjdczGGhfX3WhKw7XZhWVHYxX46fqoZGwqMg&usqp=CAU" width="90px" height="220px"/>
+  <img id="heisenberg" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/75bbcd5d-d67a-4cd4-84c6-3809fb5d250e/d9qu7ft-d199be23-117d-41ab-b091-961f36174ff8.png/v1/fill/w_766,h_1043,q_70,strp/walter_white_heisenberg___breaking_bad_by_hir0e_d9qu7ft-pre.jpg" width="90px" height="220px"/>
+  <img id="left-door" src="https://pngimg.com/d/door_PNG17560.png" width="100px" height=""/>
+  <img id="right-door" src="https://pngimg.com/d/door_PNG17560.png" width="100px" height=""/>
+  
+  <img id="spider" src="https://www.pngall.com/wp-content/uploads/10/Walter-White-Breaking-Bad-Series-PNG.png" width=100 height=100 />
+  <img id="waltuh" src="https://i.kym-cdn.com/photos/images/original/001/897/090/207.png" width="400px"/>
+  <img id="gus" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/fb6a00b4-9cdc-401d-9a61-41fdbe9d09ce/dfqnms9-ce74f7b1-0c45-44f1-b867-362791c0cdd8.png/v1/fill/w_1280,h_1829/gus_fring__render__2__by_yessing_dfqnms9-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTgyOSIsInBhdGgiOiJcL2ZcL2ZiNmEwMGI0LTljZGMtNDAxZC05YTYxLTQxZmRiZTlkMDljZVwvZGZxbm1zOS1jZTc0ZjdiMS0wYzQ1LTQ0ZjEtYjg2Ny0zNjI3OTFjMGNkZDgucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.llMkUDn02rDomffjEqbCkaJjEDmv4_oWWVzXP7E3Tco" height="400px"/>
+  <img id="walt" src="https://o.remove.bg/downloads/5399036f-2a93-4108-9fc1-faca4f8765e3/ustv-breaking-bad-17-removebg-preview.png" width="700px"/>
+  <img id="saul" src="https://www.pngall.com/wp-content/uploads/14/Saul-Goodman-PNG-Photos.png" width="600px"/>
+</div>
+    <script>
+        const nameInput = document.getElementById('user-name');
+const displayName = document.getElementById('hello-message');
+let blueCandy = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjdczGGhfX3WhKw7XZhWVHYxX46fqoZGwqMg&usqp=CAU";
+let heisenberg = "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/75bbcd5d-d67a-4cd4-84c6-3809fb5d250e/d9qu7ft-d199be23-117d-41ab-b091-961f36174ff8.png/v1/fill/w_766,h_1043,q_70,strp/walter_white_heisenberg___breaking_bad_by_hir0e_d9qu7ft-pre.jpg";
+const leftDoor = "https://pngimg.com/d/door_PNG17560.png";
+const rightDoor = "https://pngimg.com/d/door_PNG17560.png";
+
+function displayMessage() {
+  console.log(nameInput.value);
+  displayName.textContent = "Hello " + nameInput.value;
+  document.getElementById('user-name').style.display = 'none';
+  document.getElementById('button').style.display = 'none';
+  document.getElementById('text-placeholder').textContent += 'Find the special blue candy';
+  document.getElementById('text-placeholder2').textContent += 'and dont get caught by Heisenberg!';
+  document.getElementById('left-door').style.display = 'block';
+  document.getElementById('right-door').style.display = 'block';
+  document.getElementById('button2').style.display = 'block';
+  document.getElementById('button3').style.display = 'block';
+  document.getElementById('button4').style.display = 'block';
+}
+function reset() {
+  document.getElementById('left-door').style.display = 'block';
+  document.getElementById('right-door').style.display = 'block';
+  document.getElementById('button2').style.display = 'block';
+  document.getElementById('button3').style.display = 'block';
+  leftDoor.style.display = 'block';
+  rightDoor.style.display = 'block';
+}
+
+
+function doorRandom(selection) {
+  document.getElementById('left-door').style.display = 'block';
+  document.getElementById('right-door').style.display = 'block';
+  leftDoor.style.display = "block";
+  rightDoor.style.display = "block";
+  let correctDoor = Math.floor(Math.random() * 2) + 1;
+
+  if (correctDoor == 1 && selection == "left") {
+    leftDoor.innerHTML = blueCandy;
+    rightDoor.innerHTML = heisenberg;
+  } else {
+    leftDoor.innerHTML = heisenberg;
+    rightDoor.innerHTML = blueCandy;
+  }
+}
+    </script>
+</body>
+
+</html>

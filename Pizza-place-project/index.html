@@ -1,0 +1,291 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Place project</title>
+    <style>
+        body {
+  margin: 0;
+  padding: 0;
+}
+div.container {
+  height: 100vh;
+  width: 51vw;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 3px solid black;
+  box-shadow: 0px 0px 20px 35px rgba(0, 0, 0, 0.7);
+  padding: 0;
+}
+img#banner-logo {
+  width: 51vw;
+  height: 20vh;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+input::placeholder {
+  color: red;
+  opacity: 50%;
+}
+h1#header {
+  color: maroon;
+  font-size: 3rem;
+  font-family: sans-serif, "Arial";
+  height: 6vh;
+  padding: 0.5rem 1.5rem;
+  margin: 0;
+}
+h1#paragraph {
+  color: black;
+  font-size: 0.9rem;
+  font-family: serif, "Arial";
+  height: 15vh;
+  padding: 0 1.5rem;
+  margin: 0;
+}
+form#customer-information {
+  width: 24vw;
+  height: 45vh;
+  background-color: beige;
+  border: 2px solid grey;
+  border-radius: 20px;
+  margin-left: 0.9rem;
+  display: inline-block;
+  padding: 1rem 0rem;
+}
+form#share-experience {
+  width: 25vw;
+  height: 50vh;
+  background-color: beige;
+  border: 2px solid grey;
+  border-radius: 20px;
+  margin-left: 0.9rem;
+  display: inline-block;
+  padding: 0.1rem 0 0 0;
+  display: none;
+}
+div.form-wrapper {
+  width: 28vw;
+  display: inline-block;
+}
+form {
+  display: inline-block;
+}
+nav {
+  background: linear-gradient(180deg, black, darkred, darkred, darkred);
+  text-align: center;
+  padding: 1rem;
+  overflow: hidden;
+  height: 3.5vh;
+  margin: 0;
+  border: 0;
+}
+label {
+  width: 58%;
+  float: left;
+  margin: 0rem 0rem 0rem 0.5rem;
+}
+input {
+  width: 38%;
+  float: right;
+  margin: 0rem 0.5rem 0rem 0rem;
+}
+label,
+input {
+  box-sizing: border-box;
+  padding: 0 0.1rem 0rem 1rem;
+}
+form > div {
+  margin: 0.5rem 0;
+}
+form > div::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.25rem;
+  margin: 0.4rem 0 0.8rem 0.8rem;
+  font-family: Arial;
+  display: inline-block;
+}
+label#mailing-list-label {
+  width: 27vw;
+  text-align: right;
+}
+input#mailing-list-input {
+  width: 2.5vw;
+  margin: 0.5rem 0rem;
+  float: left;
+}
+input#dine-out-count {
+  width: 5vw;
+}
+label#count-label {
+  width: 35vh;
+}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+  <img id="banner-logo" src="">
+  <nav>
+    <a href="">Home</a>
+    <a href="">Menu</a>
+    <a href="">Directions</a>
+    <a href="">Coupons</a>
+    <a href="">Orders</a>
+    <a href="">Catering</a>
+    <a href="">Reviews</a>
+  </nav>
+  <h1 id="header">Customer Survey</h1>
+  <h1 id="paragraph">Thank you for taking our customer survey. Your response helps Red Ball Pizza maintain the tradition that has made us the top-rated pizzeria in the metro area. All participants are automatically entered into a monthly drawing to receive a Red Ball Express PizzaFest containing two large pizzas, a 2-liter soda, and a side order of chicken wings. Check your e-mail inbox for contest results.
+    <br />
+    <br />
+    Surveys are private and confidential. Red Ball Pizza will not share your contact information with third parties, ever.
+    <br />
+    <br />
+    Required values are marked by an asterisk (*)
+  </h1>
+  <div class="form-wrapper">
+    <form id="customer-information">
+      <div id="name">
+        <label id="name-label" for="name-input">Name*</label>
+        <input id="name-input" type="text" placeholder="first and last name">
+      </div>
+      <div id="address">
+        <label id="address-label" for="address-input">Street Address</label>
+        <input id="address-input" type="text">
+      </div>
+      <div id="city">
+        <label id="city-label" for="city-input">City</label>
+        <input id="city-input" type="text">
+      </div>
+      <div id="state">
+        <label id="state-label" for="state-input">State</label>
+        <input id="state-input" type="text">
+      </div>
+      <div id="postal-code">
+        <label id="postal-code-label" for="postal-code-input">Postal Code</label>
+        <input id="postal-code-input" type="text" placeholder="nnnnn (-nnnn)">
+      </div>
+      <div id="number">
+        <label id="number-label" for="number-input">Phone Number</label>
+        <input id="number-input" type="text" placeholder="(nnn)-nnn-nnnn">
+      </div>
+      <div id="email">
+        <label id="email-label" for="email-input">E-mail*</label>
+        <input id="email-input" type="text">
+      </div>
+      <div id="referral">
+        <label id="referral-label" for="referral-input">Where did you hear about us?</label>
+        <label id="referral-label" for="referral-input">(select all that apply)</label>
+        <select id="referral-source" size="5">
+          <option value="internet">Internet</option>
+          <option value="magazine">Magazine</option>
+          <option value="newspaper">Newspaper</option>
+          <option value="word-of-mouth">Word of Mouth</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div id="dish">
+        <label id="dish-label" for="dish-input">What's your favorite dish?</label>
+        <input id="dish-input" type="text">
+      </div>
+      <div id="count">
+        <label id="count-label" for="count-input">How many times do you dine out per month?</label>
+        <input type="number" id="dine-out-count" min="0" value="0" width="50px">
+      </div>
+      <div id="mailing-list">
+        <input id="mailing-list-input" type="checkbox">
+        <label id="mailing-list-label" for="mailing-list-input">Add me to your mailing list for great coupons and specials!</label>
+        <div>
+    </form>
+  </div>
+  <div class="form-wrapper">
+    <form id="share-experience">
+      <div id="name">
+        <label id="name-label" for="name-input">Name*</label>
+        <input id="name-input" type="text" placeholder="first and last name">
+      </div>
+      <div id="address">
+        <label id="address-label" for="address-input">Street Address</label>
+        <input id="address-input" type="text">
+      </div>
+      <div id="city">
+        <label id="city-label" for="city-input">City</label>
+        <input id="city-input" type="text">
+      </div>
+      <div id="state">
+        <label id="state-label" for="state-input">State</label>
+        <input id="state-input" type="text">
+      </div>
+      <div id="postal-code">
+        <label id="postal-code-label" for="postal-code-input">Postal Code</label>
+        <input id="postal-code-input" type="text" placeholder="nnnnn (-nnnn)">
+      </div>
+      <div id="number">
+        <label id="number-label" for="number-input">Phone Number</label>
+        <input id="number-input" type="text" placeholder="(nnn)-nnn-nnnn">
+      </div>
+      <div id="email">
+        <label id="email-label" for="email-input">E-mail*</label>
+        <input id="email-input" type="text">
+      </div>
+      <div id="referral">
+        <label id="referral-label" for="referral-input">Where did you hear about us?</label>
+        <label id="referral-label" for="referral-input">(select all that apply)</label>
+        <select id="referral-source" size="5">
+          <option value="internet">Internet</option>
+          <option value="magazine">Magazine</option>
+          <option value="newspaper">Newspaper</option>
+          <option value="word-of-mouth">Word of Mouth</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div id="dish">
+        <label id="dish-label" for="dish-input">What's your favorite dish?</label>
+        <input id="dish-input" type="text">
+      </div>
+      <div id="count">
+        <label id="count-label" for="count-input">How many times do you dine out per month?</label>
+        <input type="number" id="dine-out-count" min="0" value="0" width="50px">
+      </div>
+      <div id="mailing-list">
+        <input id="mailing-list-input" type="checkbox">
+        <label id="mailing-list-label" for="mailing-list-input">Add me to your mailing list for great coupons and specials!</label>
+        <div>
+    </form>
+  </div>
+</div>
+    <script>
+        const testImage = document.getElementById("test-image");
+const bannerLogo = document.getElementById("banner-logo");
+const customerInfoForm = document.getElementById("customer-information");
+
+let hamburgerSrc =
+  "https://drive.google.com/uc?id=1CnkfA7eH9vAEcuHo-eSbTh0QQdnpIcQb";
+let redX = "https://drive.google.com/uc?id=1DhvGl41dsjs4X2VE4skPXMj6tRzDVHOB";
+let greenCheck =
+  "https://drive.google.com/uc?id=1LDcwQ0vWPkphHPOMDOzOZ8ei3P5hEunv";
+let bannerSrc =
+  "https://drive.google.com/uc?id=1XVrJasLndnCWu2aB1AbxBrHP4CxtZ7YP";
+let checkerBoard =
+  "https://drive.google.com/uc?id=1xTkMkhjX350bTk1q0hZXm6RwQKKK0j4T";
+
+document.body.style.backgroundImage = `url(${checkerBoard})`;
+bannerLogo.src = bannerSrc;
+
+customerInfoForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+});
+    </script>
+</body>
+
+</html>

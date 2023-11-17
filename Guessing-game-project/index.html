@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing Game Project</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo&display=swap');
+img {
+  padding: 0;
+  margin: 0;
+}
+div.container {
+  overflow: hidden;
+}
+body {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main {
+  width: 90vw;
+  height: 100vh;
+  margin: auto;
+  background-color: darkred;
+  border-radius: 35px;
+  box-shadow: 5px 5px 5px 1px rgba(90,0,0,100%);
+  overflow: hidden;
+}
+h1#title {
+  margin: 0;
+  padding: 0;
+  background-color: orangered;
+  border-radius: 1rem;
+  font-family: 'Exo', sans-serif;
+  font-size: 5vw;
+  box-shadow: 0px 5px 5px 1px rgba(255,50,0,100%);
+}
+h1#hint {
+  color: purple;
+  padding: 0;
+  margin: 0;
+  border: 1px solid black;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 3rem;
+  font-family: 'Exo', sans-serif;
+  background-color: #DD4D00;
+  box-shadow: 0px 5px 5px 1px rgba(200,50,50,100%);
+  width: 30vw;
+  display: inline-block;
+}
+input.letter-input {
+  font-size: 2rem;
+  width: calc(80%/5);
+  color: black;
+  text-align: center;
+  box-shadow: 5px 5px 5px 1px rgba(200,50,0,100%);
+  background-color: #e60;
+  font-family: 'Exo', sans-serif;
+  margin: 1rem 1%;
+}
+table {
+  margin: auto;
+}
+tr {
+  vertical-align: top;
+}
+th, td {
+  padding: 0.5rem;
+  text-align: center;
+  border: 1.5px solid black;
+  width: calc(80%/5);
+  font-size: 1.5rem;
+  background-color: #e90;
+  color: black;
+  font-family: 'Exo', sans-serif;
+  box-shadow: 5px 5px 5px 1px rgba(200,100,0,100%);
+  width: 15vw
+}
+@keyframes imgPulse {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.05);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes purpleGuySlide {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+img#character-image{
+  animation: imgPulse 5s linear infinite;
+  border-radius: 20px;
+}
+img#purple-guy {
+  animation: purpleGuySlide 3s ease-in-out infinite;
+}
+h1#result {
+  font-family: 'Exo', sans-serif;
+  background-color: red;
+  width: 50vh;
+  text-align: center;
+  border-radius: 30px;
+  font-size: 3rem;
+  display: inline-block;
+  box-shadow: 0px 5px 5px 1px rgba(255,50,0,100%);
+}
+    </style>
+</head>
+
+<body>
+    <main>
+  <img src="" width="300" height="200" id="character-image" alt="character-select-image" />
+<audio id="character-audio">
+  <source src="" type="audio/ogg">
+  Your browser does not support mp3 audio
+</audio>
+<select name="image-choice" id="image-select">
+  <option value="" disabled selected>Select a character</option>
+  <option value="pillow-fazbear">Freddy Fazbear</option>
+  <option value="pillow-chica">Chica</option>
+  <option value="pillow-foxy">Foxy</option>
+  <option value="pillow-bonnie">Bonnie</option>
+  <option value="pillow-goldfred">Golden Freddy</option>
+</select>
+  <div class="container">
+    <img src="https://drive.google.com/uc?export=view&id=1SRU2xJDaOSq67PF1OKmF45xwL5cX9mbK" width="" height="150px"/> <img src="https://drive.google.com/uc?export=view&id=11oGuxmiZ5TNdM_Wd-fVi1QusNA3EGHYn" width="" height="150px"/> <img src="https://drive.google.com/uc?export=view&id=1F6AerelwWnT6u_F0dW0idAGcHIt1mI9n" width="" height="150px"/> <img src="https://drive.google.com/uc?export=view&id=1DwrvI15UR-8Vz0L_wkL2SQsdhu07p2qK" width="" height="150px"/> <img src="https://drive.google.com/uc?export=view&id=17JkGst8cWNPaOve0glVdgs7SWcc9fzOu" width="" height="150px"/>
+    </div>
+<h1 id="title">Guess the FNAF Password</h1>
+    
+<form id="password-form">
+
+</form>
+  <h1 id="hint">HINT -<img src="https://drive.google.com/uc?export=view&id=1IozTVmq0PXUmH8P0frhhvxZhqT3g4KNw" width="" height="60px" id="purple-guy"/>
+  </h1>
+  <table>
+  <thead>
+    <tr>
+      <th>Guesses</th>
+      <th>Guesses</th>
+      <th>Guesses</th>
+      <th>Guesses</th>
+      <th>Guesses</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="td0">---------------</td>
+      <td id="td1">---------------</td>
+      <td id="td2">---------------</td>
+      <td id="td3">---------------</td>
+      <td id="td4">---------------</td>
+    </tr>
+  </tbody>
+</table>
+  <audio id="character-audio">
+  <source src="" type="audio/ogg">
+  Your browser does not support mp3 audio
+</audio>
+  <h1 id="result"></h1>
+</main>
+    <script>
+        const passwordForm = document.getElementById("password-form");
+const resultText = document.getElementById('result');
+const characterAudio = document.getElementById("character-audio");
+const cheerAudio = "https://drive.google.com/uc?id=1fe-2qpDXzNOHkdSAYBiGiWHSYpFTl9lj";
+const winAudio = "https://drive.google.com/uc?id=1ccMdBf0dnKCVHYeydnNPhFkcSNq4F5xs";
+const loseAudio = "https://drive.google.com/uc?id=1KBtVO8GB_MUr8FEpppwfB5f8-rdMYIIq";
+const loserAudio ="https://drive.google.com/uc?id=1OgcniqgWIIXsbje6WG_iDxAG2RmGZGVT";
+
+let numOfCorrect = 0;
+let numOfWrong = 0;
+let phrase = "afton";
+let index = 0;
+
+for (let char of phrase) {
+  const letterInput = document.createElement('input');
+  letterInput.type = "text";
+  letterInput.maxLength = "1";
+  letterInput.classList.add("letter-input");
+  letterInput.id = index.toString();
+  passwordForm.appendChild(letterInput);
+  index++;
+}
+
+passwordForm.addEventListener("change", function(event) {
+  const thisInput = event.target;
+  const guess = thisInput.value;
+  if (guess === phrase[parseInt(thisInput.id)]) {
+    numOfCorrect += 1;
+    thisInput.disabled = true;
+    thisInput.placeholder = guess;
+    characterAudio.src = winAudio;
+    characterAudio.play();
+    console.log(numOfCorrect);
+  } else if (guess !== phrase[parseInt(thisInput.id)]) {
+    console.log("Boo!");
+ document.getElementById(`td${thisInput.id}`).innerHTML += "<br>" + guess;
+    thisInput.value = "";
+    characterAudio.src = loseAudio;
+    characterAudio.play();
+    numOfWrong += 1;
+  } if (numOfCorrect === 5) {
+    console.log("You win!!");
+    characterAudio.src = cheerAudio;
+    characterAudio.play();
+    resultText.textContent = "You win!";
+  } if (numOfWrong === 10) {
+    console.log("You Lose!");
+    characterAudio.src = loserAudio;
+    characterAudio.play();
+    resultText.textContent = "You lose! :(";
+  }
+});
+
+const imageSelect = document.getElementById("image-select");
+const characterImg = document.getElementById("character-image");
+
+const pillowFazbearSrc =
+  "https://drive.google.com/uc?export=view&id=1bSg6ajUe1J4NKTHiiSWlt-UYwo1JgJTZ";
+const pillowChicaSrc =
+  "https://drive.google.com/uc?export=view&id=1Kv_-OB0McswUqXbul78vGwBh-cwNaky0";
+const pillowFoxySrc =
+  "https://drive.google.com/uc?export=view&id=1LS9Lui4KLs-hL3P1f6LQ8yh07xP3ipA8";
+const pillowBonnieSrc =
+  "https://drive.google.com/uc?export=view&id=1gqGyH-JCgL7J_ouDXoq6xT0KC_mdQJla";
+const pillowGoldfredSrc =
+  "https://drive.google.com/uc?export=view&id=1ZQR48SZz0qsaORd507qfsvFfNhKQcfUD";
+const characterSelectSrc =
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSniGVGUlqkHjc6O5gta5o7Wt2NncCFSy7Dbw&usqp=CAU";
+const laughAudio =
+  "https://commondatastorage.googleapis.com/codeskulptor-assets/Evillaugh.ogg";
+const zombieAudio =
+  "https://codeskulptor-demos.commondatastorage.googleapis.com/descent/Zombie.mp3";
+const engine5Audio =
+  "https://commondatastorage.googleapis.com/codeskulptor-demos/riceracer_assets/fx/engine-5.ogg";
+const hitAudio =
+  "https://rpg.hamsterrepublic.com/wiki-images/7/72/Metal_Hit.ogg";
+const explosionAudio =
+  "https://codeskulptor-demos.commondatastorage.googleapis.com/GalaxyInvaders/explosion_02.wav";
+const freddyAudio = "https://drive.google.com/uc?id=1bnIMpguGBlFDvY20Niu-ge-wLn_-8hNC";
+
+characterImg.src = characterSelectSrc;
+imageSelect.addEventListener("change", function () {
+  console.log(this.value);
+  if (this.value === "pillow-fazbear") {
+    characterImg.src = pillowFazbearSrc;
+    characterAudio.src = freddyAudio;
+    characterAudio.play();
+  } else if (this.value === "pillow-chica") {
+    characterImg.src = pillowChicaSrc;
+    characterAudio.play();
+  } else if (this.value === "pillow-foxy") {
+    characterImg.src = pillowFoxySrc;
+    characterAudio.play();
+  } else if (this.value === "pillow-bonnie") {
+    characterImg.src = pillowBonnieSrc;
+    characterAudio.play();
+  } else if (this.value === "pillow-goldfred") {
+    characterImg.src = pillowGoldfredSrc;
+    characterAudio.play();
+  }
+});
+    </script>
+</body>
+
+</html>

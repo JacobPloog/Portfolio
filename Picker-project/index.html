@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picker project</title>
+    <style>
+        div.container {
+  background-image: url(https://cdn.akamai.steamstatic.com/steam/apps/332800/capsule_616x353.jpg?t=1579635993);
+  width: 100vw;
+  height: 100vh;
+}
+button {
+  position: absolute;
+  left: 47vw;
+  top: 15vh;
+}
+div#random {
+  border: 5px solid black;
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  left: 35vw;
+  top: 20vh;
+}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+  <button onclick="assignGuy()">Pick fnaf guy!</button>
+<div id="random"><img id="freddyStart" src="https://i.pinimg.com/564x/95/47/61/954761fed929605737ee09a5506b4f9c.jpg" width="500px" height="500px"/> </div>
+</div>
+    <script>
+        const freddy = "https://i.pinimg.com/564x/95/47/61/954761fed929605737ee09a5506b4f9c.jpg";
+const bonnie = "https://steamuserimages-a.akamaihd.net/ugc/1769322874526068665/A01ABFF1B1E7185FED51838296C44421E9E632B6/";
+const chica = "https://pbs.twimg.com/media/EzF1qsDXMAESXO6?format=jpg&name=4096x4096";
+const mangle = "https://ih1.redbubble.net/image.1243804404.1268/flat,750x,075,f-pad,750x1000,f8f8f8.jpg";
+const foxy = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0YTKLzIr29hmFxKvb-ivFvshVv4zVpRiYJw&usqp=CAU";
+const puppet = "https://i1.sndcdn.com/artworks-000137280167-x9xsly-t500x500.jpg";
+const stewie = "https://pbs.twimg.com/media/D5UdiFpXkAE_lwo.jpg";
+const freddyStart = document.getElementById('freddyStart');
+
+freddyStart.src = freddy;
+
+function assignGuy() {
+
+let randNum = (Math.floor(Math.random() * 6) + 1);
+
+if (randNum == 1) {
+  freddyStart.src = freddy;
+}
+if (randNum == 2) {
+  freddyStart.src = bonnie;
+}
+if (randNum == 3) {
+  freddyStart.src = chica;
+}
+if (randNum == 4) {
+  freddyStart.src = mangle;
+}
+if (randNum == 5) {
+  freddyStart.src = foxy;
+}
+if (randNum == 6) {
+  freddyStart.src = puppet;
+}
+if (randNum == 6) {
+  freddyStart.src = stewie;
+}
+}
+    </script>
+</body>
+
+</html>

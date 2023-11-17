@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Select project</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <img src="" width="600" height="400" id="character-image" alt="character-select-image" />
+<audio id="character-audio">
+  <source src="" type="audio/ogg">
+  Your browser does not support mp3 audio
+</audio>
+<select name="image-choice" id="image-select">
+  <option value="" disabled selected>Select an image</option>
+  <option value="mario-raccoon">Tanooki Mario</option>
+  <option value="mario-cat">Cat Mario</option>
+  <option value="mario-astro">Astro Mario</option>
+  <option value="peach-wedding">Wedding Peach</option>
+  <option value="peach-pink">Princess Peach</option>
+  <option value="peach-fire">Fire Peach</option>
+  <option value="dk-ice">Ice Donkey Kong</option>
+  <option value="dk-fire">Fire Donkey Kong</option>
+  <option value="dk-black">Black Donkey Kong</option>
+  <option value="toad-red">Toad</option>
+  <option value="toadette">Toadette</option>
+  <option value="toad-blue">Blue Toad</option>
+  <option value="pillow-fazbear">Pillow Fazbear</option>
+  <option value="scary-fazbear">Freddy Costume</option>
+  <option value="pillow-chica">Pillow Chica</option>
+  <option value="pillow-foxy">Pillow Foxy</option>
+  <option value="pillow-bonnie">Pillow Bonnie</option>
+  <option value="pillow-goldfred">Pillow Golden Freddy</option>
+</select>
+    <script>
+        const imageSelect = document.getElementById("image-select");
+const characterImg = document.getElementById("character-image");
+const characterAudio = document.getElementById("character-audio");
+
+const marioRaccoonSrc =
+  "https://drive.google.com/uc?export=view&id=1Zehno27FMtG5hDd-TyFRky9wyv53lcHj";
+const marioCatSrc =
+  "https://drive.google.com/uc?export=view&id=1ZgigMQZ1CmJVYNhZ6vaz7eiKk9ZjfNlY";
+const marioAstroSrc =
+  "https://drive.google.com/uc?export=view&id=1ZpeukvmCIX8dy_2md0zDO8rkKZoLHfRT";
+const peachWeddingSrc =
+  "https://drive.google.com/uc?export=view&id=1_2ZQiL4XlmPUI4UEW2fqvRFk4078cErK";
+const peachPinkSrc =
+  "https://drive.google.com/uc?export=view&id=1_4CcPhxb5oAa6Myzh8MZv2Fe7nWiupI_";
+const peachFireSrc =
+  "https://drive.google.com/uc?export=view&id=1_HjCzHSVvQadyuzQeNqCncP8ULKVBtWj";
+const dkIceSrc =
+  "https://drive.google.com/uc?export=view&id=1_Z1aNb5oK-MqI3hmqF_-Ba4tPWjkhAtD";
+const dkFireSrc =
+  "https://drive.google.com/uc?export=view&id=1_bE8cmnBAj1hYNmV_SRnun8NpDZCOMHF";
+const dkBlackSrc =
+  "https://drive.google.com/uc?export=view&id=1_f3Xb2c5vmEXk4l4XEs3RvhQONNxdVpx";
+const toadRedSrc =
+  "https://images.squarespace-cdn.com/content/v1/59973af5f14aa1ab06cba333/1682540844937-DKWX7IJM6R28A733YDCY/tum.jpg?format=1500w";
+const toadetteSrc =
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE8dZ4AqXVO3LK5jIDs7FJk1P6RxSKKT9oEA&usqp=CAU";
+const toadBlueSrc =
+  "https://media.entertainmentearth.com/assets/images/015e2184408744d5a0f7ba0d7ea87a25lg.jpg";
+const pillowFazbearSrc =
+  "https://drive.google.com/uc?export=view&id=1bSg6ajUe1J4NKTHiiSWlt-UYwo1JgJTZ";
+const scaryFazbearSrc =
+  "https://drive.google.com/uc?export=view&id=1Zk0KKneemnGAnGcQusOKPiiZT4Whyf7e";
+const pillowChicaSrc =
+  "https://drive.google.com/uc?export=view&id=1Kv_-OB0McswUqXbul78vGwBh-cwNaky0";
+const pillowFoxySrc =
+  "https://drive.google.com/uc?export=view&id=1LS9Lui4KLs-hL3P1f6LQ8yh07xP3ipA8";
+const pillowBonnieSrc =
+  "https://drive.google.com/uc?export=view&id=1gqGyH-JCgL7J_ouDXoq6xT0KC_mdQJla";
+const pillowGoldfredSrc =
+  "https://drive.google.com/uc?export=view&id=1ZQR48SZz0qsaORd507qfsvFfNhKQcfUD";
+const characterSelectSrc =
+  "https://drive.google.com/uc?export=download&id=1ayfmqbm6-Ab2ws71xBS2SFHoGNdBJNOE";
+const laughAudio =
+  "https://commondatastorage.googleapis.com/codeskulptor-assets/Evillaugh.ogg";
+const zombieAudio =
+  "https://codeskulptor-demos.commondatastorage.googleapis.com/descent/Zombie.mp3";
+const engine5Audio =
+  "https://commondatastorage.googleapis.com/codeskulptor-demos/riceracer_assets/fx/engine-5.ogg";
+const hitAudio =
+  "https://rpg.hamsterrepublic.com/wiki-images/7/72/Metal_Hit.ogg";
+const explosionAudio =
+  "https://codeskulptor-demos.commondatastorage.googleapis.com/GalaxyInvaders/explosion_02.wav";
+
+characterImg.src = characterSelectSrc;
+imageSelect.addEventListener("change", function () {
+  console.log(this.value);
+  if (this.value === "mario-raccoon") {
+    characterImg.src = marioRaccoonSrc;
+    characterAudio.src = hitAudio;
+    characterAudio.play();
+  } else if (this.value === "mario-cat") {
+    characterImg.src = marioCatSrc;
+    characterAudio.play();
+  } else if (this.value === "mario-astro") {
+    characterImg.src = marioAstroSrc;
+    characterAudio.play();
+  } else if (this.value === "peach-wedding") {
+    characterImg.src = peachWeddingSrc;
+    characterAudio.src = explosionAudio;
+    characterAudio.play();
+  } else if (this.value === "peach-pink") {
+    characterImg.src = peachPinkSrc;
+    characterAudio.play();
+  } else if (this.value === "peach-fire") {
+    characterImg.src = peachFireSrc;
+    characterAudio.play();
+  } else if (this.value === "dk-ice") {
+    characterImg.src = dkIceSrc;
+    characterAudio.src = engine5Audio;
+    characterAudio.play();
+  } else if (this.value === "dk-fire") {
+    characterImg.src = dkFireSrc;
+    characterAudio.play();
+  } else if (this.value === "dk-black") {
+    characterImg.src = dkBlackSrc;
+    characterAudio.play();
+  } else if (this.value === "toad-red") {
+    characterImg.src = toadRedSrc;
+    characterAudio.src = zombieAudio;
+    characterAudio.play();
+  } else if (this.value === "toadette") {
+    characterImg.src = toadetteSrc;
+    characterAudio.play();
+  } else if (this.value === "toad-blue") {
+    characterImg.src = toadBlueSrc;
+    characterAudio.play();
+  } else if (this.value === "pillow-fazbear") {
+    characterImg.src = pillowFazbearSrc;
+    characterAudio.src = laughAudio;
+    characterAudio.play();
+  } else if (this.value === "scary-fazbear") {
+    characterImg.src = scaryFazbearSrc;
+    characterAudio.play();
+  } else if (this.value === "pillow-chica") {
+    characterImg.src = pillowChicaSrc;
+    characterAudio.play();
+  } else if (this.value === "pillow-foxy") {
+    characterImg.src = pillowFoxySrc;
+    characterAudio.play();
+  } else if (this.value === "pillow-bonnie") {
+    characterImg.src = pillowBonnieSrc;
+    characterAudio.play();
+  } else if (this.value === "pillow-goldfred") {
+    characterImg.src = pillowGoldfredSrc;
+    characterAudio.play();
+  }
+});
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wink project</title>
+    <style>
+        canvas#myCanvas {
+  background-color: black;
+  border: 1px solid black;
+}
+    </style>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="1000" height="800">L browser lmao</canvas>
+<button type="button" onclick="wink()">WINK</button>
+<button type="button" onclick="box()">box idk</button>
+    <script>
+        const canvas = document.getElementById('myCanvas');
+const cWidth = canvas.width;
+const cHeight = canvas.height;
+let ctx = canvas.getContext('2d');
+
+let xCenter = canvas.width / 2;
+let yCenter = canvas.height / 2;
+let Radius = 350;
+let fillColor = 'yellow';
+let mathPi = Math.PI * 2;
+
+
+let i = 0;
+
+function doCircle(x, y, r, startA, endA, color) {
+ctx.beginPath();
+  ctx.fillStyle = color;
+  ctx.arc(x, y, r, startA, endA);
+  ctx.fill();
+  ctx.stroke();
+}
+
+let isWinking = false;
+
+function wink() {
+  doCircle(xCenter, yCenter, Radius + 50, 0, mathPi, 'yellow');
+
+doCircle(xCenter - 150, yCenter - 40, Radius - 250, 0, mathPi, 'darkred');
+
+doCircle(xCenter + 15, yCenter + 130, Radius - 100, 0, Math.PI * 1, 'white');
+
+
+  
+  if (isWinking) {
+    ctx.fillStyle = 'black';
+ctx.fillRect(canvas.width / 2 + 50, canvas.height / 2 - 75, 250, 50);
+  } else {
+doCircle(xCenter + 170, yCenter - 50, Radius - 250, 0, mathPi, 'darkred');
+  }
+  isWinking = !isWinking;
+}
+
+function box() {
+  ctx.fillStyle = 'white';
+ctx.fillRect(canvas.width / 2, canvas.height / 2, 250, 250);
+  backgroundImage = 'url(https://cdn.cloudflare.steamstatic.com/steam/apps/319510/header.jpg?t=1666889251)'
+}
+    </script>
+</body>
+
+</html>
